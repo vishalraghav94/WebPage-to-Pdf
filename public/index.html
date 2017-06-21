@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>CK Design</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('images/homescreen-bg.png');
+            background-repeat: inherit;
+            background-size: cover;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .pointer::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        ul {
+            padding: 0;
+            list-style-type: none;
+        }
+
+        span {
+            color: #c90e3e;
+        }
+
+        li {
+            font-size: 12px;
+            padding: 15px;
+            color: white;
+            font-family: "Verdana";
+            display: inline;
+        }
+
+
+        .menu {
+            padding: 0px;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+        .header {
+            padding: 0;
+            margin: 0;
+            background-color: rgba(0,0,0,0.2);
+        }
+        .msg{
+            border: none;
+            padding: 0px;
+            margin: 0px;
+            text-align: center;
+        }
+        .HI {
+            border: none;
+            padding: 6px;
+            margin: 0px;
+        }
+        html {
+            padding: 0;
+        }
+        p {
+            font-family: "Arial";
+            text-align: center;
+            color: white;
+            font-size: 57px;
+            padding: 10px 0px;
+            margin: 0px;
+            display: inline;
+            letter-spacing: 4px;
+            background-color: rgba(19,19,19,0.5);
+        }
+        .pointer {
+            margin: 0;
+            padding: 0;
+        }
+        .pointer_img{
+            margin-bottom: 0;
+            align-content: center;
+            padding: 5px 55px;
+        }
+        p.para {
+            font-size: 13px;
+            padding: 3px;
+            letter-spacing: 10px;
+        }
+        .new {
+            margin: 3px;
+        }
+        ul#social li{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: block;
+
+        }
+        .socia {
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            bottom:0;
+
+        }
+        .s_img{
+            margin: 0;
+            padding: 0;
+            width: 32px;
+
+        }
+        .links{
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+        ul#social2{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        ul#social2 li{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: block;
+
+        }
+        .blank2{
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+        div#ribbon{
+            background-color: #269483;
+            transform: rotate(-45deg) translate(-58px);
+
+
+        }
+        p#ribbon_content{
+            padding:6px 24px ;
+            font-size: 12px;
+            font-family: Verdana;
+            letter-spacing: 1px;
+        }
+        .container {
+            height: 103px;
+            position: fixed;
+            right: -74px;
+            bottom: 0;
+        }
+        li:hover{
+            background-color: #c90e3e;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        .menu_img {
+            padding-left: 140px;
+        }
+        img#menu_button{
+            width: 32px;
+            height: 32px;
+            display: none;
+            float: right;
+        }
+        li{
+            float: right;
+        }
+        .menu_container{
+            padding-right: 140px;
+        }
+        @media only screen and (max-width: 1280px){
+            .col-m-1 {width: 8.33%;}
+            .col-m-2 {width: 16.66%;}
+            .col-m-3 {width: 25%;}
+            .col-m-4 {width: 33.33%;}
+            .col-m-5 {width: 41.66%;}
+            .col-m-6 {width: 50%;}
+            .col-m-7 {width: 58.33%;}
+            .col-m-8 {width: 66.66%;}
+            .col-m-9 {width: 75%;}
+            .col-m-10 {width: 83.33%;}
+            .col-m-11 {width: 91.66%;}
+            .col-m-12 {width: 100%;}
+            .menu_img {
+                padding: 15px;
+            }
+            li{
+                float:right;
+            }
+            .menu_container{
+                padding: 15px;
+            }
+        }
+
+        img#pointer_icon{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        table{
+            visibility: hidden;
+            border-collapse: collapse;
+        }
+        table#floatingmenu{
+            display: table;
+            border-collapse: collapse;
+        }
+        table#floatingmenu td{
+            color: white;
+            font-family: Verdana;
+            background-color: #c90e3e;
+        }
+        td{
+            font-family: Verdana;
+            color: white;
+            background-color: black;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid rgba(99,99,99,0.4);
+            margin: 0;
+        }
+
+        td:hover{
+            background-color: #c90e3e;
+            cursor: pointer;
+        }
+        .blank{
+            padding: 0;
+        }
+        @media only screen and (max-width: 768px) {
+            .col-t-1 {width: 8.33%;}
+            .col-t-2 {width: 16.66%;}
+            .col-t-3 {width: 25%;}
+            .col-t-4 {width: 33.33%;}
+            .col-t-5 {width: 41.66%;}
+            .col-t-6 {width: 50%;}
+            .col-t-7 {width: 58.33%;}
+            .col-t-8 {width: 66.66%;}
+            .col-t-9 {width: 75%;}
+            .col-t-10 {width: 83.33%;}
+            .col-t-11 {width: 91.66%;}
+            .col-t-12 {width: 100%;}
+            .menu {
+                display: none;
+            }
+            img#menu_button{
+                display:inline;
+            }
+            .menu_container{
+                padding-top: 25px;
+            }
+            p{
+                font-size: 35px;
+                padding: 5px 0px;
+            }
+            p.para{
+                font-size: 13px;
+                letter-spacing: 3px;
+                padding: 5px;
+            }
+        }
+        ul#social li:hover{
+            background-color: transparent;
+        }
+        ul#social2 li:hover{
+            background-color: transparent;
+        }
+        .s_img:hover{
+            background-color: #c90e3e;
+        }
+        #download{
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="header col-12">
+    <div class="col-6 menu_img col-m-1">
+        <img src="images/logo-header4.png" alt="">
+    </div>
+    <div class="col-6 menu_container col-m-11">
+        <img src="images/menu-icon.png" id="menu_button" alt="" onclick="myfunction()"><br>
+        <div class="menu">
+            <ul style="margin: -12px">
+                <li>
+                    <a id="download" href="">Download</a>
+                </li>
+                <li>
+                    WORK
+                </li>
+                <li>
+                    TEAM
+                </li>
+                <li>
+                    BLOG
+                </li>
+                <li>
+                    CLIENTS
+                </li>
+                <li>
+                    CONTACTS
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<div class="blank col-12 col-m-12 col-t-12">
+    <table class="col-m-12 col-t-12 col-12" id="hiddenmenu">
+        <tr>
+            <td>
+                CONTACTS
+            </td>
+            <td>
+                CLIENTS
+            </td>
+        </tr>
+        <tr>
+            <td>
+                BLOG
+            </td>
+            <td>
+                TEAM
+            </td>
+        </tr>
+        <tr>
+            <td>
+                WORK
+            </td>
+            <td>
+                SERVICES
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="pointer col-12">
+    <div class="col-12 pointer_img">
+        <img src="images/logo_pointer2.png" alt="" id="pointer_icon">
+    </div>
+</div>
+<div class="HI col-12">
+
+    <div class="col-12 msg">
+        <p>HI THERE, WE ARE <span>CK</span>.</p>
+    </div>
+
+</div>
+<div class="HI col-12 new">
+
+    <div class="col-12 msg">
+        <p class="para">AN INDIAN WEB DESIGN COMPANY</p>
+    </div>
+
+</div>
+
+<div class="col-12 links">
+    <div class="col-1 socia">
+        <ul id="social2">
+            <li>
+                <img src="images/facebook-app-logo%20copy.png" alt="" class="s_img">
+            </li>
+            <li>
+                <img src="images/twitter.png" alt="" class="s_img">
+            </li>
+            <li>
+                <img src="images/google-plus.png" alt="" class="s_img">
+            </li>
+            <li>
+                <img src="images/linkedin.png" alt="" class="s_img">
+            </li>
+        </ul>
+    </div>
+    <div class="col-8">
+        &nbsp;
+    </div>
+    <div class="container">
+        <div id="ribbon">
+            <p id="ribbon_content">
+                W<span style="color: black">WW</span>&#174NOMINEE
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function myfunction()
+    {
+        var element1;
+        var element2;
+        element1 = document.getElementById('hiddenmenu');
+        element2 = document.getElementById('menu_button');
+        if (element1.style.visibility == "hidden") {
+            element1.style.visibility = "visible";
+            element2.src = 'images/navigate_cross.png';
+        }
+        else {
+            element1.style.visibility = "hidden";
+            element2.src = 'images/menu-icon.png';
+        }
+
+    }
+    var body = document.body,
+    html = document.documentElement;
+
+var height = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight );
+
+    var url = "/generate?" + 
+    "docUrl="+ encodeURIComponent(document.URL) +
+    "&screenWidth="+screen.width+"&screenHeight="+height;
+    var a = document.getElementById('download');
+    a.href=url;
+
+</script>
+</html>
